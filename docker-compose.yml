@@ -1,0 +1,17 @@
+services:
+  app:
+    platform: linux/amd64 # for M1 chip
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: nextjs-jwt
+    tty: true
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 3000:3000
+    networks:
+      - nextjs-jwt
+
+networks:
+  nextjs-jwt:
