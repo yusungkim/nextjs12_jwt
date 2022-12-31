@@ -25,7 +25,7 @@ export default function withMethodGuard({
     }
 
     try {
-      handler(req, res);
+      return handler(req, res);
     } catch (e) {
       console.error(e);
       res.status(500).json({ok: false, message: 'server error'});
